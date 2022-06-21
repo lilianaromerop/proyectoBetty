@@ -3,7 +3,7 @@ import React from 'react'
 const Navbar = () => {
   return (
     <>
-      <nav class="bg-white mb-6">
+      <nav class="bg-white mb-8 lg:mb-6">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div class="relative flex items-center justify-between h-16">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -26,7 +26,7 @@ const Navbar = () => {
               <div class="hidden sm:block sm:ml-6">
                 <div class="flex justify-between space-x-8">
                   <a href="#" className="text-black font-normal underline underline-offset-8 px-3 py-2 rounded-md text-sm " aria-current="page">Inicio</a>
-                  <a href="#" className="text-gray-400 font-normal hover:text-gray-400 hover:underline underline-offset-8 px-3 py-2 text-sm ">Biografía</a>
+                  <a href="#" className="text-gray-400 font-normal hover:text-gray-400 hover:underline underline-offset-8 px-3 py-2 text-sm">Biografía</a>
                   <a href="#" className="text-gray-400 font-normal hover:text-gray-400 hover:underline underline-offset-8 px-3 py-2 text-sm ">Contacto</a>
                 </div>
               </div>
@@ -35,10 +35,10 @@ const Navbar = () => {
         </div>
 
         <div class="sm:hidden" id="mobile-menu">
-          <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Inicio</a>
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Biografía</a>
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
+          <div class="px-0 pt-2 ">
+            <a href="#" class="bg-black text-center text-white block px-3 py-4 text-sm font-normal" aria-current="page">Inicio</a>
+            <a href="#" class="bg-black text-center text-gray-300 block px-3 py-3 text-sm font-normal">Biografía</a>
+            <a href="#" class=" bg-black text-center text-gray-300 block px-3 py-4  text-sm font-normal">Contacto</a>
           </div>
         </div>
       </nav>
