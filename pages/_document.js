@@ -28,6 +28,7 @@ class MyDocument extends Document {
               rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
             />
+            <script src="https://kit.fontawesome.com/99bd774422.js" crossOrigin="anonymous"></script>
         </Head>
         <body>
           <Main />
