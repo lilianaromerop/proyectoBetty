@@ -25,9 +25,15 @@ const ModalDetalle= ({setOpen}) => {
                     <div className="sm:w-96">
                       <img src="http://artscad.com/A-Imgs.nsf/0/9D37872E08BA0CF9C125821E0037CC95/$FILE/Victor-ovsyannikov-.Jpg" alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="w-auto h-auto object-center object-cover"/>
                       <div className="mt-6 space-x-5 ">
-                          <Icon className="cursor-pointer text-gray-400 hover:text-indigo-400" component={FacebookRoundedIcon} inheritViewBox />
-                          <Icon className="cursor-pointer text-gray-400 hover:text-indigo-400" component={InstagramIcon} inheritViewBox />
-                          <Icon className="cursor-pointer text-gray-400 hover:text-indigo-400" component={ShareIcon} inheritViewBox />
+                          <Icon sx={{fontSize:25}}className="cursor-pointer text-gray-400 hover:text-indigo-400" inheritViewBox>
+                            <FacebookRoundedIcon sx={{fontSize:25}}/>
+                          </Icon>
+                          <Icon sx={{fontSize:25}} className="cursor-pointer text-gray-400 hover:text-indigo-400" inheritViewBox>
+                            <InstagramIcon sx={{fontSize:25}}/>
+                          </Icon>
+                          <Icon sx={{fontSize:25}} className="cursor-pointer text-gray-400 hover:text-indigo-400" inheritViewBox>
+                            <ShareIcon sx={{fontSize:25}}/>
+                          </Icon>
                       </div>
                     </div>
                     <div className="w-3/4 ml-14 mt-4">
@@ -44,7 +50,7 @@ const ModalDetalle= ({setOpen}) => {
                               <h6 className="text-sm font-thin text-gray-900 sm:pr-12">Precio</h6>
                               <p className="text-xl font-medium text-indigo-600">$500.000 pesos</p>
                               <form>
-                                <button type="submit" className="mt-6 justify-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <button type="submit" className="mt-6 justify-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                   <Icon className="cursor-pointer mr-3" component={WhatsAppIcon} inheritViewBox />Pedir por whatsapp
                                 </button>
                               </form>
