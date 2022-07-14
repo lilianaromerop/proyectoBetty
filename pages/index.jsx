@@ -36,9 +36,9 @@ export default function Home() {
         <div className="px-2 sm:px-0 sm:flex col-span-5 w-4/4 ">
           {/* FILTROS */}
             <div className="px-4 flex mb-12 sm:flex-col sm:px-0 ">
-              <span className="underline underline-offset-8 text-black text-right sm:py-4 pr-6 text-sm sm:w-44 lg:w-48 sm:bg-black sm:text-white sm:no-underline">Abstracto</span>
-              <span className=" text-gray-400 text-right hover:text-black hover:underline hover:underline-offset-8 sm:py-4 pr-6 text-sm sm:w-44 lg:w-48">Paisajes</span>
-              <span className=" text-gray-400 text-right hover:text-black hover:underline hover:underline-offset-8 sm:py-4 pr-6 text-sm sm:w-44 lg:w-48">Retratos</span>
+              <span className="cursor-pointer underline underline-offset-8 text-black text-right sm:py-4 pr-6 text-sm sm:w-44 lg:w-48 sm:bg-black sm:text-white sm:no-underline">Abstracto</span>
+              <span className="cursor-pointer text-gray-400 text-right hover:text-white hover:bg-black sm:py-4 pr-6 text-sm sm:w-44 lg:w-48">Paisajes</span>
+              <span className="cursor-pointer text-gray-400 text-right hover:text-white hover:bg-black sm:py-4 pr-6 text-sm sm:w-44 lg:w-48">Retratos</span>
             </div>
           {/* GALERIA */}
           <div>
@@ -64,14 +64,22 @@ export default function Home() {
 
 const Cuadro = ({src, alt}) =>{
   const [open,setOpen] = useState(false)
+  const [textOver,setTextOver] = useState (false)
   return(
     <div>
-      <div onClick={()=>setOpen(true)} className="group relative bg-black cursor-pointer">
+      <div onMouseOver={()=>setTextOver(true)} onClick={()=>setOpen(true)} className="group relative bg-black cursor-pointer">
         <div className="relative w-auto h-auto bg-white overflow-hidden group-hover:opacity-20 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
           <img src={src} alt={alt} className="w-full h-full object-center object-cover"/>
         </div>
       </div>
       {open ? (<ModalDetalle setOpen={setOpen}/>):null}
+      {textOver ? (
+      <div className="group relative bg-black cursor-pointer">
+        <div className="relative w-auto h-auto bg-white overflow-hidden group-hover:opacity-20 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+          hola
+        </div>
+      </div>
+      ):null}
     </div>
     
   )
