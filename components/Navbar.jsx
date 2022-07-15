@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
+import Link from 'next/link';
 
 const Navbar = () => {
   return (
@@ -26,9 +26,15 @@ const Navbar = () => {
               </div>
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex justify-between space-x-8">
-                  <a href="/" className="text-black font-normal underline underline-offset-8 px-3 py-2 rounded-md text-sm " aria-current="page">Inicio</a>
-                  <a href="/bio" className="text-gray-400 font-normal hover:text-gray-400 hover:underline underline-offset-8 px-3 py-2 text-sm">Biografía</a>
-                  <a href="/contacto" className="text-gray-400 font-normal hover:text-gray-400 hover:underline underline-offset-8 px-3 py-2 text-sm ">Contacto</a>
+                  <Link href="/">
+                    <a className="text-black font-normal underline underline-offset-8 px-3 py-2 rounded-md text-sm " aria-current="page">Inicio</a>
+                  </Link>
+                  <Link href="/bio">
+                    <a className="text-gray-400 font-normal hover:text-gray-400 hover:underline underline-offset-8 px-3 py-2 text-sm">Biografía</a>
+                  </Link> 
+                  <Link href="/contacto">
+                    <a className="text-gray-400 font-normal hover:text-gray-400 hover:underline underline-offset-8 px-3 py-2 text-sm ">Contacto</a>
+                  </Link>
                 </div>
               </div>
             </div>
