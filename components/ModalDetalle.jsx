@@ -4,8 +4,9 @@ import { Icon } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import ShareIcon from '@mui/icons-material/Share';
+import Zoom from 'react-img-zoom'
 
-const ModalDetalle= ({setOpen}) => {
+const ModalDetalle= ({setOpen, src}) => {
   return (
 <div className="z-10" role="dialog" aria-modal="true">
     <div className="hidden fixed z-10 inset-0 bg-gray-500 bg-opacity-75 transition-opacity md:block"></div>
@@ -22,8 +23,17 @@ const ModalDetalle= ({setOpen}) => {
             <div className="w-full ">
               <div>
                   <div className="sm:flex">
-                    <div className="sm:w-96">
-                      <img src="http://artscad.com/A-Imgs.nsf/0/9D37872E08BA0CF9C125821E0037CC95/$FILE/Victor-ovsyannikov-.Jpg" alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="w-auto h-auto object-center object-cover"/>
+                    <div>
+                      <div className="flex justify-center">
+                        <Zoom
+                          img={src}
+                          zoomScale={3}
+                          width={300}
+                          height={310}
+                          alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
+                        />
+                      </div>
+                      
                       <div className="text-center sm:text-left mt-6 space-x-5 ">
                           <Icon sx={{fontSize:25}}className="cursor-pointer text-gray-400 hover:text-indigo-400" inheritViewBox>
                             <FacebookRoundedIcon sx={{fontSize:25}}/>
