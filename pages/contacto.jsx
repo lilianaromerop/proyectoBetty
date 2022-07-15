@@ -8,7 +8,7 @@ import { Icon } from '@mui/material';
 const contacto = () => {
 return (
 <Layout2>
-    <div className="bg-black">
+    <div className="bg-black mb-20">
         <div className="flex max-w-8xl mx-auto items-center justify-center space-x-40">
             <div className="bg-black w-96 my-8">
                 <form className="text-right">

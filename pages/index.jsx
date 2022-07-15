@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <Layout>
       <div className="">
-        <div className="px-2 sm:px-0 sm:flex col-span-5 w-4/4 ">
+        <div className="px-2 mb-8 sm:px-0 sm:flex col-span-5 w-4/4 ">
           {/* FILTROS */}
             <div className="px-4 flex mb-12 sm:flex-col sm:px-0 ">
               <span className="cursor-pointer underline underline-offset-8 text-black text-right sm:py-4 pr-6 text-sm sm:w-44 lg:w-48 sm:bg-black sm:text-white sm:no-underline">Abstracto</span>
