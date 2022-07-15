@@ -22,13 +22,13 @@ return (
                     </label>
                     <label className="flex flex-col">
                     E-mail:
-                    <input className="rounded-sm p-1" type="text" name="email" placeholder="EMAIL" required/>
+                    <input className="rounded-sm= p-1" type="text" name="email" placeholder="EMAIL" required/>
                     </label>
                     <label className="flex flex-col">
                     Tu mensaje:
                     <textarea className="rounded-sm p-1" type="text" name="nombre" placeholder="TU MENSAJE" required/>
                     </label>
-                    <button className="bg-cyan-400 text-right text-white font-semibold text-sm py-3 px-4 mt-6  rounded-md self-center" type="submit" value="ENVIAR">ENVIAR</button>
+                    <button className="bg-cyan-500 hover:bg-cyan-400 text-right text-white font-semibold text-sm py-3 px-4 mt-6  rounded-md self-center" type="submit" value="ENVIAR">ENVIAR</button>
                 </form>
             </div>
             <div className=" w-96 flex flex-col ">
