@@ -14,6 +14,16 @@ const Footer2 = () => {
   <div className="text-center">
       <div className="mt-14 sm:mt-0 text-xs text-gray-500">©2022 Beatriz Apellido. All rights reserved.</div>
   </div>
+  <div>
+      <a
+        href="https://wa.me/2348100000000"
+        class="whatsapp_float"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa fa-whatsapp whatsapp-icon"></i>
+      </a>
+    </div>
     
   </>
   )

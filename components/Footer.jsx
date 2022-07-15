@@ -23,6 +23,16 @@ const Footer = () => {
       <div className='mt-16 sm:mt-0 w-48'>
         <Svg/>
       </div>
+      <div>
+        <a
+          href="https://wa.me/2348100000000"
+          class="whatsapp_float"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa fa-whatsapp whatsapp-icon"></i>
+        </a>
+      </div>
   </div>
     
   </>
