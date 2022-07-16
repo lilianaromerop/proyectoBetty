@@ -71,7 +71,7 @@ const Cuadro = ({src, alt}) =>{
     <div>
       <div onMouseOver={()=>setTextOver(true)} onClick={()=>setOpen(true)} className="img-zoom-container group relative bg-black cursor-pointer">
         <div className="relative w-auto h-auto bg-white overflow-hidden group-hover:opacity-20 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-          <Image width="287" height="256" src={src} alt={alt} className="w-full h-full object-center object-cover"/>
+          <Image width="287" height="300" src={src} alt={alt} className="w-full h-full object-center object-cover"/>
         </div>
       </div>
       {open ? (<ModalDetalle setOpen={setOpen} src={src}/>):null}

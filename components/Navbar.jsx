@@ -22,7 +22,7 @@ const Navbar = () => {
             </div>
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
               <div className="flex-shrink-0 flex items-center">
-                <h1 className="sm:ml-12 lg:ml-20 font-bold text-black text-4xl">BEATRIZ&apos;S ART</h1>
+                <h1 className=" font-bold text-black text-4xl">BEATRIZ&apos;S ART</h1>
               </div>
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex justify-between space-x-8">

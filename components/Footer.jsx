@@ -14,7 +14,7 @@ library.add(fab, faFacebook)
 const Footer = () => {
   return (
   <>
-  <div className="container mb-4 max-w-7xl mx-auto items-center justify-center flex flex-col sm:justify-between sm:flex-row">
+  <div className="container mb-4 items-center justify-center flex flex-col sm:justify-between sm:flex-row">
       <div className="space-x-5 sm:mb-10 sm:px-6 lg:px-8 sm:mt-8">
           <Icon className="cursor-pointer hover:text-indigo-400" component={FacebookRoundedIcon} inheritViewBox />
           <Icon className="cursor-pointer hover:text-indigo-400" component={InstagramIcon} inheritViewBox />
