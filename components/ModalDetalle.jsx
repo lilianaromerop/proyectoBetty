@@ -5,6 +5,9 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import ShareIcon from '@mui/icons-material/Share';
 import Zoom from 'react-img-zoom'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css';
+import Image from 'next/image'
 
 const ModalDetalle= ({setOpen, src}) => {
   return (
@@ -65,21 +68,17 @@ const ModalDetalle= ({setOpen, src}) => {
                                 </button>
                               </form>
                             </section>
-                                    
                           </section>
                         </div>
                     </div>
                   </div>
-                          
-              <div className="sm:col-span-8 lg:col-span-7 mt-8 ml-4">
-                        
+
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   )
 }
 

@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add react -- cursor - zoom -- save
+  /usr/local/bin/node /usr/local/bin/yarn add @mui/joy
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands
@@ -14,17 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/--: Not found
-      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66992:18)
-      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140763:22)
-      at Request.emit (events.js:400:28)
-      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141735:10)
-      at Request.emit (events.js:400:28)
-      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141657:12)
-      at Object.onceWrapper (events.js:519:28)
-      at IncomingMessage.emit (events.js:412:35)
-      at endReadableNT (internal/streams/readable.js:1317:12)
-      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+  Error: ENOENT: no such file or directory, lstat '/Users/lilianaromero/Library/Mobile Documents/com~apple~CloudDocs/Desktop/galeriaBetty/proyectoBetty/node_modules/@mui/icons-material/.DoNotDisturbAltOutlined 2.js.icloud'
 
 npm manifest: 
   {
@@ -52,6 +42,7 @@ npm manifest:
       "next": "12.1.6",
       "react": "18.2.0",
       "react-dom": "18.2.0",
+      "react-img-zoom": "^0.1.0",
       "react-router-dom": "6",
       "styled-components": "^5.3.5"
     },
@@ -2301,6 +2292,11 @@ Lockfile:
     dependencies:
       loose-envify "^1.1.0"
       scheduler "^0.23.0"
+  
+  react-img-zoom@^0.1.0:
+    version "0.1.0"
+    resolved "https://registry.yarnpkg.com/react-img-zoom/-/react-img-zoom-0.1.0.tgz#a74799324e925b54299cf2c63b2ea6c9fa00e20a"
+    integrity sha512-TkoDAKJQWuZX3w7+8loHUH/1aT2nNdCPSz2RR8t1Ckp86mrZ728Afm5oOyc7a3bnCJsUK1suaDvXBjpvwJEnrg==
   
   react-is@^16.13.1, react-is@^16.7.0:
     version "16.13.1"

@@ -5,8 +5,8 @@ import Image from 'next/image'
 const bio = () => {
   return (
     <Layout>
-        <div className="container mb-8 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 sm:flex sm:space-x-10">
-            <Image width="120" height="100" className="sm:h-96" src="https://i.pinimg.com/originals/34/b9/72/34b972b6cfe7eed1ff16b493c7186021.jpg" alt="foto Betty"/>
+        <div className="mb-8 px-2 sm:px-6 lg:px-8 sm:flex sm:space-x-10">
+            <Image width="300" height="400" className="mx-auto" src="https://i.pinimg.com/originals/34/b9/72/34b972b6cfe7eed1ff16b493c7186021.jpg" alt="foto Betty"/>
             <div className="w-full text-center">
                 <h1 className="mt-8 text-xl font-medium text-gray-900">Beatríz Apellido</h1>
                 <h3 className="font-thin text-sm text-gray-500">Artista Colombiana</h3>

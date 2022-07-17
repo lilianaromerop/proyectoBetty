@@ -25,7 +25,7 @@ const Navbar = () => {
                 <h1 className=" font-bold text-black text-4xl">BEATRIZ&apos;S ART</h1>
               </div>
               <div className="hidden sm:block sm:ml-6">
-                <div className="flex justify-between space-x-8">
+                <div className="flex justify-between space-x-4">
                   <Link href="/">
                     <a className="text-black font-normal underline underline-offset-8 px-3 py-2 rounded-md text-sm " aria-current="page">Inicio</a>
                   </Link>
