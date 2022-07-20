@@ -5,9 +5,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import ShareIcon from '@mui/icons-material/Share';
 import Zoom from 'react-img-zoom'
-import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css';
-import Image from 'next/image'
 
 const ModalDetalle= ({setOpen, src}) => {
   return (

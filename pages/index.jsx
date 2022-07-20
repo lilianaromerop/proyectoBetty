@@ -5,8 +5,8 @@ import { useState } from 'react'
 import ModalDetalle from '../components/ModalDetalle'
 import Zoom from 'react-img-zoom'
 import Image from 'next/image'
-import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css';
+import Filtros from '../components/Filtros';
 
 const Galeria =[
   {
@@ -40,9 +40,7 @@ export default function Home() {
         <div className="px-2 mb-8 sm:px-0 sm:flex col-span-5 w-4/4 ">
           {/* FILTROS */}
             <div className="px-4 flex mb-12 sm:flex-col sm:px-0">
-              <span className="cursor-pointer underline underline-offset-8 text-black text-right sm:py-4 pr-6 text-sm sm:w-40 lg:w-48 sm:bg-black sm:text-white sm:no-underline">Abstracto</span>
-              <span className="cursor-pointer text-gray-400 text-right hover:text-white hover:bg-black sm:py-4 pr-6 text-sm sm:w-40 lg:w-48">Paisajes</span>
-              <span className="cursor-pointer text-gray-400 text-right hover:text-white hover:bg-black sm:py-4 pr-6 text-sm sm:w-40 lg:w-48">Retratos</span>
+            <Filtros/>
             </div>
           {/* GALERIA */}
           <div>
@@ -54,75 +52,7 @@ export default function Home() {
                       <Cuadro src={item.src} alt={item.alt} key={index}/>
                     ))}
                   </div>
-                  <Carousel
-                    additionalTransfrom={0}
-                    arrows
-                    autoPlaySpeed={3000}
-                    centerMode={false}
-                    className=""
-                    containerClass="container-with-dots"
-                    dotListClass=""
-                    draggable
-                    focusOnSelect={false}
-                    infinite
-                    itemClass=""
-                    keyBoardControl
-                    minimumTouchDrag={80}
-                    pauseOnHover
-                    renderArrowsWhenDisabled={false}
-                    renderButtonGroupOutside={false}
-                    renderDotsOutside={false}
-                    responsive={{
-                      desktop: {
-                        breakpoint: {
-                          max: 3000,
-                          min: 1024
-                        },
-                        items: 3,
-                        partialVisibilityGutter: 40
-                      },
-                      mobile: {
-                        breakpoint: {
-                          max: 464,
-                          min: 0
-                        },
-                        items: 1,
-                        partialVisibilityGutter: 30
-                      },
-                      tablet: {
-                        breakpoint: {
-                          max: 1024,
-                          min: 464
-                        },
-                        items: 2,
-                        partialVisibilityGutter: 30
-                      }
-                    }}
-                    rewind={false}
-                    rewindWithAnimation={false}
-                    rtl={false}
-                    shouldResetAutoplay
-                    showDots={false}
-                    sliderClass=""
-                    slidesToSlide={1}
-                    swipeable
-                  >
-                     <div className="relative w-auto h-auto bg-white overflow-hidden group-hover:opacity-20 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                      <Image width="287" height="300" src={Galeria[0].src} className="w-full h-full object-center object-cover"/>
-                    </div>
-                    <div className="relative w-auto h-auto bg-white overflow-hidden group-hover:opacity-20 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                      <Image width="287" height="300" src={Galeria[1].src} className="w-full h-full object-center object-cover mx-2"/>
-                    </div>
-                    <div className="relative w-auto h-auto bg-white overflow-hidden group-hover:opacity-20 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                      <Image width="287" height="300" src={Galeria[2].src} className="w-full h-full object-center object-cover"/>
-                    </div>
-                    <div className="relative w-auto h-auto bg-white overflow-hidden group-hover:opacity-20 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                      <Image width="287" height="300" src={Galeria[3].src} className="w-full h-full object-center object-cover"/>
-                    </div>
-                    <div className="relative w-auto h-auto bg-white overflow-hidden group-hover:opacity-20 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                      <Image width="287" height="300" src={Galeria[4].src} className="w-full h-full object-center object-cover"/>
-                    </div>
-                  </Carousel>
+                  
                 </div>
               </div>
           </div>
@@ -140,7 +70,7 @@ const Cuadro = ({src, alt}) =>{
   return(
     
     <div>
-      <div onMouseOver={()=>setTextOver(true)} onClick={()=>setOpen(true)} className="img-zoom-container group relative bg-black cursor-pointer">
+      <div onClick={()=>setOpen(true)} className="img-zoom-container group relative bg-black cursor-pointer">
         <div className="relative w-auto h-auto bg-white overflow-hidden group-hover:opacity-20 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
           <Image width="287" height="300" src={src} alt={alt} className="w-full h-full object-center object-cover"/>
         </div>
