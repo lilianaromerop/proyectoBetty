@@ -53,7 +53,7 @@ const Nombre = ({dataCuadro}) => {
       <div className="w-full sm:flex">
         <Filtros/>
       <div>
-          <div className="px-9 mb-40 lg:flex">
+          <div className="px-9 mb-10 lg:flex">
             <div>
               <div className="justify-center">
                 <Zoom
@@ -75,17 +75,29 @@ const Nombre = ({dataCuadro}) => {
                     <section className="mt-4">
                       <p className="text-sm font-thin text-gray-900">Descripción de la obra sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Descripción de la obra sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Descripción de la obra sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Descripción de la obra sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
                     </section>
-                    <section aria-labelledby="information-heading" className="mt-12">
-                      <h6 className="text-sm font-thin text-gray-900 sm:pr-12">Precio</h6>
-                      <p className="text-2xl font-medium text-indigo-600">$500.000 pesos</p>
-                      <form>
-                        <button type="submit" className="w-full lg:w-2/4 mt-10 sm:mt-6 justify-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 sm:flex text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                          <Icon className="cursor-pointer mr-3" component={WhatsAppIcon} inheritViewBox />Pedir por whatsapp
-                        </button>
-                      </form>
-                    </section>
                   </section>
-                </div>
+            </div>
+          </div>
+          <div className="px-9 mb-10 lg:flex">
+            <div>
+              <div className="justify-center">
+                <Zoom
+                  img={''}
+                  width={300}
+                  />
+              </div>
+            </div>
+            <div className=" lg:w-4/4 mt-8 lg:ml-14 md:ml-0 sm:mt-4">
+            <section aria-labelledby="information-heading" className="w-full">
+                  <h6 className="text-sm font-thin text-gray-900 sm:pr-12">Precio</h6>
+                  <p className="text-2xl font-medium text-indigo-600">$500.000 pesos</p>
+                  <form>
+                    <button type="submit" className="w-full mt-10 sm:mt-6 justify-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 sm:flex text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <Icon className="cursor-pointer mr-3" component={WhatsAppIcon} inheritViewBox />Pedir por whatsapp
+                    </button>
+                  </form>
+              </section>
+            </div>
           </div>
         </div>
       </div>
