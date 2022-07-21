@@ -7,30 +7,36 @@ import Zoom from 'react-img-zoom'
 import Image from 'next/image'
 import 'react-multi-carousel/lib/styles.css';
 import Filtros from '../components/Filtros';
+import Link from 'next/link'
 
 const Galeria =[
   {
+    nombre:'obra_1',
     src:'https://cdn.shopify.com/s/files/1/0402/7029/9298/products/VMN_2550461a-5aff-4f29-a291-8a9850bb6e05_1260x.png?v=1617653798',
     alt:'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.'
   },
   {
+    nombre:'obra_2',
     src:'https://www.artmajeur.com/medias/standard/j/o/josemi/artwork/1637505_50_x_30_Bodegon_Horizontal_002.jpg',
     alt:'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.'
   },
   {
+    nombre:'obra_3',
     src:'http://artscad.com/A-Imgs.nsf/0/9D37872E08BA0CF9C125821E0037CC95/$FILE/Victor-ovsyannikov-.Jpg',
     alt:'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.'
   },
   {
+    nombre:'obra_4',
     src:'https://i0.wp.com/arteyregalosperu.com/wp-content/uploads/2022/04/40x50-cuadro-kirby-and-the-forgotten-land-la-tierra-olvidada-nintendo-negro-horizontal.jpg?fit=1080%2C1080&ssl=1',
     alt:'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.'
   },
   {
+    nombre:'obra_5',
     src:'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg',
     alt:'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.'
   },
-
 ]
+
 
 export default function Home() {
 
@@ -49,10 +55,9 @@ export default function Home() {
                 <div className="max-w-2xl mx-auto lg:max-w-none">
                   <div className="grid space-y-0 gap-x-3 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
                     {Galeria.map((item,index)=>(
-                      <Cuadro src={item.src} alt={item.alt} key={index}/>
+                      <Cuadro item={item} key={index}/>
                     ))}
                   </div>
-                  
                 </div>
               </div>
           </div>
@@ -64,24 +69,20 @@ export default function Home() {
 }
 
 
-const Cuadro = ({src, alt}) =>{
-  const [open,setOpen] = useState(false)
-  const [textOver,setTextOver] = useState (false)
+const Cuadro = ({item}) =>{
+
   return(
     
     <div>
-      <div onClick={()=>setOpen(true)} className="img-zoom-container group relative bg-black cursor-pointer">
+      <div className="img-zoom-container group relative bg-black cursor-pointer">
         <div className="relative w-auto h-auto bg-white overflow-hidden group-hover:opacity-20 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-          <Image width="287" height="300" src={src} alt={alt} className="w-full h-full object-center object-cover"/>
+          <Link href={`/${item.nombre}`}>
+            <a>
+              <Image width="287" height="300" src={item.src} alt={item.alt} className="w-full h-full object-center object-cover"/>
+            </a>
+          </Link>
         </div>
       </div>
-      {open ? (<ModalDetalle setOpen={setOpen} src={src}/>):null}
-      {/* {textOver ? (
-      <div className="group relative bg-black cursor-pointer">
-        <div className="relative w-auto h-auto bg-white overflow-hidden group-hover:opacity-20 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-        </div>
-      </div>
-      ):null} */}
     </div>
     
     
