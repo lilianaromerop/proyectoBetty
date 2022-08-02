@@ -3,15 +3,12 @@ import Image from 'next/image'
 import 'react-multi-carousel/lib/styles.css';
 import Filtros from '../components/Filtros';
 import Link from 'next/link'
-import traerGaleriaCompleta from '../services/traerGaleriaCompleta';
-import { useState } from 'react';
 import db from '../backEnd/db/mongoDb';
 import Cuadro from '../backEnd/model/cuadro'
 
 
 export default function Home({Galeria}) {
-const Galeria1 = JSON.parse(Galeria)
-
+  const Galeria1 = JSON.parse(Galeria)
   return (
     <Layout>
       <div className="">
