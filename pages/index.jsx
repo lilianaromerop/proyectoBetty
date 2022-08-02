@@ -4,6 +4,7 @@ import 'react-multi-carousel/lib/styles.css';
 import Filtros from '../components/Filtros';
 import Link from 'next/link'
 import traerGaleriaCompleta from '../services/traerGaleriaCompleta';
+import { useState } from 'react';
 import db from '../backEnd/db/mongoDb';
 import Cuadro from '../backEnd/model/cuadro'
 
@@ -44,12 +45,20 @@ const CuadroVista = ({item}) =>{
 
   return(
     
-    <div>
+    <div >
       <div className="img-zoom-container group relative bg-black cursor-pointer">
-        <div className="relative w-auto h-auto bg-white overflow-hidden group-hover:opacity-20 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-          <Link href={`/${item.nombre}`}>
-            <a>
+        <div className="relative w-auto h-auto bg-white overflow-hidden
+         sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1 ">
+          <Link href={`/${item.nombre}`} >
+            <a  >
               <Image width="287" height="300" src={item.imagen} alt={item.nombre} className="w-full h-full object-center object-cover"/>
+              <div className='opacity-0 
+                hover:opacity-100 absolute top-0 left-0 w-full 
+                h-full flex flex-col justify-center items-center transition-opacity backdrop-blur-sm
+                 bg-black/50 text-white'>
+                <div className='image_title'>{item.nombre}</div>
+                <div className='image__description'>{item.precio}</div>
+              </div>
             </a>
           </Link>
         </div>

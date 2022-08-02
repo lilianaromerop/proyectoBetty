@@ -83,6 +83,7 @@ const Nombre = ({dataCuadro}) => {
               <div className="justify-center">
                 <Zoom
                   img={''}
+                  zoomScale={3}
                   width={300}
                   />
               </div>
