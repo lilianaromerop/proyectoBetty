@@ -1,53 +1,40 @@
 import Head from 'next/head'
 import React from 'react'
-import { useRouter } from 'next/router';
 import { Layout } from '../components/layout/Layout';
-import { useEffect, useState } from 'react';
 import Filtros from '../components/Filtros'
-import { Icon } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css';
+import Cuadro from '../backEnd/model/cuadro'
+import { Icon } from '@mui/material';
 import Image from 'next/image'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import Zoom from 'react-img-zoom';
+import db from '../backEnd/db/mongoDb';
 
-const Galeria =[
-  {
-    nombre:'obra_1',
-    src:'https://cdn.shopify.com/s/files/1/0402/7029/9298/products/VMN_2550461a-5aff-4f29-a291-8a9850bb6e05_1260x.png?v=1617653798',
-    alt:'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.'
-  },
-  {
-    nombre:'obra_2',
-    src:'https://www.artmajeur.com/medias/standard/j/o/josemi/artwork/1637505_50_x_30_Bodegon_Horizontal_002.jpg',
-    alt:'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.'
-  },
-  {
-    nombre:'obra_3',
-    src:'http://artscad.com/A-Imgs.nsf/0/9D37872E08BA0CF9C125821E0037CC95/$FILE/Victor-ovsyannikov-.Jpg',
-    alt:'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.'
-  },
-  {
-    nombre:'obra_4',
-    src:'https://i0.wp.com/arteyregalosperu.com/wp-content/uploads/2022/04/40x50-cuadro-kirby-and-the-forgotten-land-la-tierra-olvidada-nintendo-negro-horizontal.jpg?fit=1080%2C1080&ssl=1',
-    alt:'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.'
-  },
-  {
-    nombre:'obra_5',
-    src:'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg',
-    alt:'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.'
-  },
-]
 
 // const items = [
 //   <Image width="287" height="300" src={Galeria[0].src} className="w-full h-full object-center object-cover "/>,
 //   <Image width="287" height="300" src={Galeria[1].src} className="w-full h-full object-center object-cover mx-2"/>
 // ];
 
+
+
 const Nombre = ({dataCuadro}) => {
-  console.log(dataCuadro)
+
+  Date.prototype.yyyymmdd = function() {
+  var mm = this.getMonth() + 1; // getMonth() is zero-based
+  var dd = this.getDate();
+
+  return [this.getFullYear(),
+          (mm>9 ? '' : '0') + mm,
+          (dd>9 ? '' : '0') + dd
+         ].join('');
+};
+
+  const dataCuadro1 = JSON.parse(dataCuadro)
+  console.log(dataCuadro1)
   return (
     <Layout>
       <div className="w-full sm:flex">
@@ -57,7 +44,7 @@ const Nombre = ({dataCuadro}) => {
             <div>
               <div className="justify-center">
                 <Zoom
-                  img={dataCuadro.src}
+                  img={dataCuadro1.imagen}
                   zoomScale={3}
                   width={300}
                   height={310}
@@ -66,14 +53,14 @@ const Nombre = ({dataCuadro}) => {
               </div>
             </div>
             <div className=" lg:w-4/4 mt-8 lg:ml-14 md:ml-0 sm:mt-4">
-                <h2 className="text-xl text-gray-900 sm:pr-12">{dataCuadro.nombre}</h2>
-                  <p className="text-sm font-thin text-gray-500">Abril 2022</p>
+                <h2 className="text-xl text-gray-900 sm:pr-12">{dataCuadro1.nombre}</h2>
+                  <p className="text-sm font-thin text-gray-500">{dataCuadro1.fechaCreacion}</p>
                   <section aria-labelledby="options-heading" className="mt-10">
                     <section aria-labelledby="information-heading">
-                      <p className="text-sm font-thin text-gray-900">Paisaje | Óleo sobre Lienzo | 61 x 91 cms</p>
+                      <p className="text-sm font-thin text-gray-900">{dataCuadro1.categoria} | {dataCuadro1.tecnica} | {dataCuadro1.size} cms</p>
                     </section>
                     <section className="mt-4">
-                      <p className="text-sm font-thin text-gray-900">Descripción de la obra sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Descripción de la obra sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Descripción de la obra sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Descripción de la obra sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                      <p className="text-sm font-thin text-gray-900">{dataCuadro1.descripcion}</p>
                     </section>
                   </section>
             </div>
@@ -91,7 +78,7 @@ const Nombre = ({dataCuadro}) => {
             <div className=" lg:w-4/4 mt-8 lg:ml-14 md:ml-0 sm:mt-4">
             <section aria-labelledby="information-heading" className="w-full">
                   <h6 className="text-sm font-thin text-gray-900 sm:pr-12">Precio</h6>
-                  <p className="text-2xl font-medium text-indigo-600">$500.000 pesos</p>
+                  <p className="text-2xl font-medium text-indigo-600">${dataCuadro1.precio}</p>
                   <form>
                     <button type="submit" className="w-full mt-10 sm:mt-6 justify-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 sm:flex text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                       <Icon className="cursor-pointer mr-3" component={WhatsAppIcon} inheritViewBox />Pedir por whatsapp
@@ -184,8 +171,19 @@ export default Nombre
 
 
 export const getStaticPaths = async (ctx) => {
-//     // const { data } = await  // your fetch function here 
-  const nombres = Galeria.map(cuadro => cuadro.nombre) 
+  await db()
+  const cuadros = await Cuadro.find({})
+ 
+
+  const materiales = cuadros.map((doc) => {
+    const material = doc.toObject();
+    material._id = material._id.toString();
+    return material
+  });
+  console.log(materiales)
+  const nombres = materiales.map(cuadro => cuadro.nombre)
+
+  
     return {
         paths: nombres.map(nombre => ({
 
@@ -197,41 +195,13 @@ export const getStaticPaths = async (ctx) => {
 }
 
 export const getStaticProps = async ({params}) => {
-  const {nombre} = params;
+  await db()
 
-  const Galeria1 =[
-    {
-      nombre:'obra_1',
-      src:'https://cdn.shopify.com/s/files/1/0402/7029/9298/products/VMN_2550461a-5aff-4f29-a291-8a9850bb6e05_1260x.png?v=1617653798',
-      alt:'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.'
-    },
-    {
-      nombre:'obra_2',
-      src:'https://www.artmajeur.com/medias/standard/j/o/josemi/artwork/1637505_50_x_30_Bodegon_Horizontal_002.jpg',
-      alt:'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.'
-    },
-    {
-      nombre:'obra_3',
-      src:'http://artscad.com/A-Imgs.nsf/0/9D37872E08BA0CF9C125821E0037CC95/$FILE/Victor-ovsyannikov-.Jpg',
-      alt:'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.'
-    },
-    {
-      nombre:'obra_4',
-      src:'https://i0.wp.com/arteyregalosperu.com/wp-content/uploads/2022/04/40x50-cuadro-kirby-and-the-forgotten-land-la-tierra-olvidada-nintendo-negro-horizontal.jpg?fit=1080%2C1080&ssl=1',
-      alt:'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.'
-    },
-    {
-      nombre:'obra_5',
-      src:'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg',
-      alt:'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.'
-    },
-  ]
-
-  const dataCuadro = Galeria1.filter(cuadro => cuadro.nombre === nombre)[0]
+  const dataCuadro = await Cuadro.find({nombre: params.nombre}) 
 
   return {
     props: {
-      dataCuadro
+      dataCuadro:JSON.stringify(dataCuadro[0])
     }
   }
 }
