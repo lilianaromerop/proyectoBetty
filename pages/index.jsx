@@ -51,7 +51,7 @@ const CuadroVista = ({item}) =>{
          sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1 ">
           <Link href={`/${item.nombre}`} >
             <a  >
-              <Image width="287" height="300" src={item.imagen} alt={item.nombre} className="w-full h-full object-center object-cover"/>
+              <Image width="287" height="300" src={item.imagen} alt={item.nombre} className="self-center"/>
               <div className='opacity-0 
                 hover:opacity-100 absolute top-0 left-0 w-full 
                 h-full flex flex-col justify-center items-center transition-opacity backdrop-blur-sm

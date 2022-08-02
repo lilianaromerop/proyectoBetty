@@ -9,8 +9,8 @@ const contacto = () => {
 return (
 <Layout2>
     <div className="bg-black mb-20">
-        <div className="sm:ml-0 md:flex items-center justify-center space-x-30">
-            <div className="bg-black md:w-96 my-8">
+        <div className="flex-col mx-auto items-center">
+            <div className="bg-black my-8">
                 <form className="mx-8 md:mx-0 text-right">
                     <label className="flex flex-col">
                     Nombre:
@@ -31,8 +31,8 @@ return (
                     <button className="w-full text-center md:w-auto bg-cyan-500 hover:bg-cyan-400 md:text-right text-white font-semibold text-sm py-3 px-4 mt-6 rounded-md self-center" type="submit" value="ENVIAR">ENVIAR</button>
                 </form>
             </div>
-            <div className=" w-96 flex flex-col justify-center">
-                <div className="flex justify-center">
+            <div className="flex-col">
+                <div className="flex-col justify-center self-center">
                     <BettyWhite/>
                 </div>
                 <div className=" text-white md:w-96 text-center">
